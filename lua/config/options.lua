@@ -18,6 +18,9 @@ opt.shiftwidth = 2
 opt.tabstop = 2
 opt.scrolloff = 6
 opt.undofile = true
+opt.smartindent = true
+
+vim.cmd("syntax enable")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "

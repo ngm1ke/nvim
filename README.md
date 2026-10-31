@@ -1,6 +1,6 @@
 # Minimal Neovim setup
 
-Modular Neovim configuration for JavaScript, TypeScript/NestJS, HTML, CSS, and Java. Requires Neovim 0.11+ and Git. `ripgrep` is recommended for project search; Java support also needs a Java 21 runtime for current Eclipse JDT Language Server releases.
+Modular Neovim configuration for JavaScript, TypeScript/NestJS, HTML, CSS, and Java. Includes Tree-sitter syntax highlighting with the Catppuccin colorscheme. Requires Neovim 0.11+, Git, a C compiler, and the Tree-sitter CLI (`brew install tree-sitter-cli` on macOS). `ripgrep` is recommended for project search; Java support also needs a Java 21 runtime for current Eclipse JDT Language Server releases.
 
 ## Install
 
@@ -12,7 +12,7 @@ cp -R nvim ~/.config/nvim
 nvim
 ```
 
-On first launch, lazy.nvim installs the plugins. Mason installs the configured TypeScript, HTML, CSS, and Java language servers. Open a Java project from its Maven or Gradle root. Install `ripgrep` with your system package manager for Telescope and project-wide search.
+On first launch, lazy.nvim installs the plugins and Tree-sitter installs parsers for the configured languages. Restart Neovim after the initial parser installation. Mason installs the configured TypeScript, HTML, CSS, and Java language servers. Open a Java project from its Maven or Gradle root. Install `ripgrep` with your system package manager for Telescope and project-wide search.
 
 Neo-tree is the default directory explorer: launching `nvim <folder>` opens the tree in place of netrw's directory view.
 
@@ -33,7 +33,8 @@ nvim/
         ├── completion.lua
         ├── debug.lua
         ├── editor.lua
-        └── lsp.lua
+        ├── lsp.lua
+        └── syntax.lua
 ```
 
 ## Keyboard shortcuts
