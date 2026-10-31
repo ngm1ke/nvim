@@ -36,37 +36,89 @@ nvim/
         └── lsp.lua
 ```
 
-## Keys
+## Keyboard shortcuts
 
-Leader is Space.
+The leader key is **Space**. Which-key shows available shortcuts after you press Space; it also shows the `Space f` choices (format, file search, project search, and replacement).
 
-Which-key displays available bindings in a popup as you press Space and continue typing. For example, after `Space f`, it shows the file search, project search, replacement, and format actions.
+### Configured Normal-mode mappings
 
-| Key | Action |
+| Keys | Action |
 | --- | --- |
-| `Space e` | Toggle folder tree |
+| `Esc` | Clear search highlights |
+| `Space w` | Save file |
+| `Space q` | Quit Neovim |
+| `Space x` / `Space bd` | Close current buffer |
+| `Space e` | Toggle Neo-tree |
 | `Space g` | Open LazyGit |
-| `Space ff` | Find files |
-| `Space fg` | Search project text |
-| `Space fr` | Search and replace across project |
-| `Space da` | Toggle all diagnostics |
-| `Space db` | Toggle diagnostics for current buffer |
+| `Space ff` | Find files with Telescope |
+| `Space fg` | Search project text with Telescope |
+| `Space fb` | Find open buffers |
+| `Space fr` | Search and replace across the project |
+| `Space bn` / `Space bp` | Next / previous buffer |
+| `Space da` | Show all available diagnostics |
+| `Space db` | Show diagnostics for current buffer |
 | `Space dd` | Show diagnostic under cursor |
 | `Space de` | Show errors |
-| `Space dq` / `Space dl` | Quickfix / location list |
+| `Space dq` / `Space dl` | Show quickfix / location list |
 | `[d` / `]d` | Previous / next diagnostic |
-| `Space bn` / `Space bp` | Next / previous buffer |
-| `Space bd` | Close buffer |
-| `Space r` | Rename symbol using LSP |
-| `gd` / `K` | Go to definition / show documentation |
-| `Space f` | Format current buffer when the language server supports it |
-| `Ctrl-Space` | Open completion suggestions |
-| `Tab` / `Shift-Tab` | Choose suggestion / move through snippets |
-| `F5` / `F9` | Continue debugging / toggle breakpoint |
-| `F10` / `F11` / `Shift-F11` | Step over / into / out |
+| `Space r` | Rename symbol with LSP |
+| `gd` | Go to definition |
+| `K` | Show symbol documentation |
+| `Space ca` | Show LSP code actions |
+| `Space f` | Format current buffer when supported by the language server |
+| `F5` | Start or continue debugging |
+| `F9` | Toggle breakpoint |
+| `F10` / `F11` / `Shift-F11` | Step over / into / out while debugging |
 | `Space du` | Toggle debugger panel |
-| `Ctrl-v`, select lines, `I` or `A` | Edit multiple lines at once using Vim's built-in block selection |
-| Visual mode: `Tab` / `Shift-Tab` | Indent / unindent selection; selection remains active |
-| `:s/old/new/g` | Replace in current line; use `:%s/old/new/g` for the whole file |
 
-Use `:Mason` to inspect or install servers, and `:checkhealth vim.lsp` to inspect language-server status. The Java server uses `nvim-jdtls` and starts when a Maven/Gradle project root is detected.
+### Configured Visual-mode mappings
+
+| Keys | Action |
+| --- | --- |
+| `Tab` | Indent selection and keep it selected |
+| `Shift-Tab` | Unindent selection and keep it selected |
+
+### Configured Insert-mode completion mappings
+
+| Keys | Action |
+| --- | --- |
+| `Ctrl-Space` | Open completion suggestions |
+| `Tab` | Select next suggestion, or expand/jump to next snippet field; otherwise insert a tab |
+| `Shift-Tab` | Select previous suggestion or jump to previous snippet field |
+| `Enter` | Accept selected suggestion |
+| `Ctrl-e` | Close completion menu |
+
+Auto-pairs inserts matching closing brackets and quotes as you type; it does not add a separate shortcut.
+
+### Neovim built-in shortcuts
+
+These are common defaults and are not custom mappings. Neovim has many more built-in commands; `:help index` lists the full reference.
+
+| Keys | Action |
+| --- | --- |
+| `h` / `j` / `k` / `l` | Move left / down / up / right |
+| `w` / `b` / `e` | Move by word: next / previous / end |
+| `0` / `^` / `$` | Line start / first nonblank / line end |
+| `gg` / `G` | File start / file end |
+| `Ctrl-d` / `Ctrl-u` | Scroll down / up half a screen |
+| `%` | Jump between matching brackets |
+| `i` / `a` / `I` / `A` | Insert before / after cursor / line start / line end |
+| `o` / `O` | Open a line below / above |
+| `x` / `dd` / `dw` | Delete character / line / word |
+| `yy` / `yw` / `p` / `P` | Copy line / word / paste after / before |
+| `u` / `Ctrl-r` | Undo / redo |
+| `.` | Repeat last change |
+| `/text` / `?text` | Search forward / backward |
+| `n` / `N` / `*` / `#` | Next / previous match / search word forward / backward |
+| `v` / `V` / `Ctrl-v` | Character / line / block Visual selection |
+| `>` / `<` | Indent / unindent Visual selection |
+| `Ctrl-w v` / `Ctrl-w s` | Split window vertically / horizontally |
+| `Ctrl-w h/j/k/l` | Move to left / lower / upper / right window |
+| `:w`, `:q`, `:wq`, `:q!` | Save / quit / save and quit / quit without saving |
+| `:s/old/new/g` / `:%s/old/new/g` | Replace in line / throughout current file |
+
+### Plugin-local shortcuts
+
+Inside Neo-tree, press `?` to see all file-browser actions. Insertion of brackets/quotes is automatic. The diagnostics and debugging commands are listed above. Use `:Mason` to inspect language servers, `:checkhealth vim.lsp` to inspect LSP status, and `:help index` for all built-in Neovim commands.
+
+Java LSP uses `nvim-jdtls` and starts when a Maven/Gradle project root is detected.
