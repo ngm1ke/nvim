@@ -36,5 +36,8 @@ map("n", "<F11>", function() require("dap").step_into() end, { desc = "Debug: st
 map("n", "<S-F11>", function() require("dap").step_out() end, { desc = "Debug: step out" })
 map("n", "<leader>du", function() require("dapui").toggle() end, { desc = "Toggle debugger UI" })
 
+map("v", "<Tab>", ">gv", { desc = "Indent selection" })
+map("v", "<S-Tab>", "<gv", { desc = "Unindent selection" })
+
 -- Multi-line editing: Ctrl-v, select rows, then I/A and type. Use :s for
 -- substitutions in a line/range and <leader>fr for project-wide replacement.

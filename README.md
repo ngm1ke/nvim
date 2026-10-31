@@ -66,6 +66,7 @@ Which-key displays available bindings in a popup as you press Space and continue
 | `F10` / `F11` / `Shift-F11` | Step over / into / out |
 | `Space du` | Toggle debugger panel |
 | `Ctrl-v`, select lines, `I` or `A` | Edit multiple lines at once using Vim's built-in block selection |
+| Visual mode: `Tab` / `Shift-Tab` | Indent / unindent selection; selection remains active |
 | `:s/old/new/g` | Replace in current line; use `:%s/old/new/g` for the whole file |
 
 Use `:Mason` to inspect or install servers, and `:checkhealth vim.lsp` to inspect language-server status. The Java server uses `nvim-jdtls` and starts when a Maven/Gradle project root is detected.
