@@ -58,7 +58,8 @@ return {
       spec = {
         { "<leader>b", group = "Buffers" },
         { "<leader>d", group = "Diagnostics" },
-        { "<leader>f", group = "Find / format" },
+        { "<leader>f", group = "Find" },
+        { "<leader>c", group = "Code" },
       },
     },
   },

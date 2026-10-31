@@ -1,6 +1,6 @@
 # Minimal Neovim setup
 
-Modular Neovim configuration for JavaScript, TypeScript/NestJS, HTML, CSS, and Java. Includes Tree-sitter syntax highlighting with the Catppuccin colorscheme. Requires Neovim 0.11+, Git, a C compiler, and the Tree-sitter CLI (`brew install tree-sitter-cli` on macOS). `ripgrep` is recommended for project search; Java support also needs a Java 21 runtime for current Eclipse JDT Language Server releases.
+Modular Neovim configuration for JavaScript, TypeScript/NestJS, HTML, CSS, and Java. Includes Tree-sitter syntax highlighting and the [Kanagawa](https://github.com/rebelot/kanagawa.nvim) dark colorscheme (Wave variant). Requires Neovim 0.11+, Git, a C compiler, and the Tree-sitter CLI (`brew install tree-sitter-cli` on macOS). `ripgrep` is recommended for project search; Java support also needs a Java 21 runtime for current Eclipse JDT Language Server releases.
 
 ## Install
 
@@ -39,7 +39,7 @@ nvim/
 
 ## Keyboard shortcuts
 
-The leader key is **Space**. Which-key shows available shortcuts after you press Space; it also shows the `Space f` choices (format, file search, project search, and replacement).
+The leader key is **Space**. Which-key shows available shortcuts after you press Space, including the `Space f` file search choices.
 
 ### Configured Normal-mode mappings
 
@@ -65,8 +65,7 @@ The leader key is **Space**. Which-key shows available shortcuts after you press
 | `Space r` | Rename symbol with LSP |
 | `gd` | Go to definition |
 | `K` | Show symbol documentation |
-| `Space ca` | Show LSP code actions |
-| `Space f` | Format current buffer when supported by the language server |
+| `Space ca` | Open code action menu: format buffer or choose an LSP code action |
 | `F5` | Start or continue debugging |
 | `F9` | Toggle breakpoint |
 | `F10` / `F11` / `Shift-F11` | Step over / into / out while debugging |
